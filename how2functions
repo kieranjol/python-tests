@@ -1,0 +1,13 @@
+import subprocess
+import sys
+import pdb
+filename = sys.argv[1]
+#pdb.set_trace()
+
+def getmediainfo(variable, inform_type):
+    variable = subprocess.check_output(['MediaInfo', '--Language=raw', '--Full', inform_type, filename])
+    return variable
+height = getmediainfo('height_raw', '--inform=Video;%Codec%')
+print height
+width= getmediainfo('width_raw', '--inform=Video;%Width%')
+print width
