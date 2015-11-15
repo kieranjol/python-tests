@@ -4,10 +4,10 @@ import pdb
 filename = sys.argv[1]
 #pdb.set_trace()
 
-def getmediainfo(variable, inform_type):
-    variable = subprocess.check_output(['MediaInfo', '--Language=raw', '--Full', inform_type, filename])
+def getmediainfo(variable, inform_type, which_file):
+    variable = subprocess.check_output(['MediaInfo', '--Language=raw', '--Full', inform_type, which_file])
     return variable
-height = getmediainfo('height_raw', '--inform=Video;%Codec%')
+height = getmediainfo('height_raw', '--inform=Video;%Codec%', filename)
 print height
-width= getmediainfo('width_raw', '--inform=Video;%Width%')
+width= getmediainfo('width_raw', '--inform=Video;%Width%', filename)
 print width
