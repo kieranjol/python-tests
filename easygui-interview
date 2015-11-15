@@ -1,0 +1,27 @@
+from easygui import *
+
+msg = "Enter your non embedded metadata"
+title = "IFI AIP Metadata Creator"
+fieldNames = ["Reference Number","Process"]
+ # we start with blanks for the values
+fieldValues = multenterbox(msg,title, fieldNames)
+question="Which do you like the most?"
+choices = ["Onelight", "Bestlight", "Grade"]
+title2="Telecine Process";
+choicepicked = choicebox(question, title, choices);
+
+question="proxy and mezz?"
+choices = ["h264", "prores", "both", "none"]
+title2="proxo";
+proxo = choicebox(question, title, choices);
+# make sure that none of the fields was left blank
+while 1:
+    if fieldValues == None: break
+    errmsg = ""
+    for i in range(len(fieldNames)):
+      if fieldValues[i].strip() == "":
+        errmsg = errmsg + ('"%s" is a required field.\n\n' % fieldNames[i])
+    if errmsg == "": break # no problems found
+    fieldValues = multenterbox(errmsg, title, fieldNames, fieldValues)
+
+print "<inm:bnm>%s</inmbnm>" % fieldValues[1]
