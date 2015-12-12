@@ -107,7 +107,7 @@ for _ in range(no_of_emptyfields):
 with open(inmagic_xmlfile, "a+") as fo:
 		fo.write('</inm:Recordset>\n')
 		fo.write('</inm:Results>\n')	
-
+numbo = 0
 for filename in video_files: #Begin a loop for all .mov and .mp4 files.
 
 	
@@ -126,11 +126,12 @@ for filename in video_files: #Begin a loop for all .mov and .mp4 files.
 	    var_type = subprocess.check_output(['exiftool', '-b',
 				                 type , filename ])
 	    return var_type
-	megapixels =  get_exiftool('megapixels', '-Megapixels', sys.argv[1] )
-	filesize =  get_exiftool('filesize', '-FileSize', sys.argv[1] )
-	codec =  get_exiftool('codec', '-FileType', sys.argv[1] )
+	megapixels =  get_exiftool('megapixels', '-Megapixels', filename )
+	filesize =  get_exiftool('filesize', '-FileSize', filename )
+	codec =  get_exiftool('codec', '-FileType', filename )
 	print codec
 	print megapixels
 	print filesize
-	add_to_inmagic('//inm:File-Format', codec,inmagic_xmlfile)
-	add_to_inmagic('//inm:Digital-Size', filesize,inmagic_xmlfile)
+	numbo +=1
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:File-Format', codec,inmagic_xmlfile)
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Digital-Size', filesize,inmagic_xmlfile)
