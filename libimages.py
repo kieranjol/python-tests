@@ -10,8 +10,8 @@ os.chdir(wd)
 
 # Find all video files to transcode
 video_files =  glob('*.tif') + glob('*.jpg')
-num_of_files = len (video_files)
-no_of_emptyfields = num_of_files - 1
+no_of_emptyfields = len (video_files)
+ 
 number = 0
 #print noofemptyfields
 with open(inmagic_xmlfile, "w+") as fo:
