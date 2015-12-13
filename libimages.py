@@ -2,6 +2,7 @@ import sys
 import subprocess
 from glob import glob
 import os
+from easygui import multenterbox, choicebox
 
 video_dir = sys.argv[1]
 inmagic_xmlfile = 'blablabla.xml'
@@ -11,6 +12,25 @@ os.chdir(wd)
 # Find all video files to transcode
 video_files =  glob('*.tif') + glob('*.jpg')
 no_of_emptyfields = len (video_files)
+
+msg = "Fill out these things please"
+title = "blablablabl"
+fieldNames = ["Year",
+	      "Film Title","Copyright", 
+              "Donation Date", "Director"]
+fieldValues = []  # we start with blanks for the values
+fieldValues = multenterbox(msg,title, fieldNames)
+
+
+# make sure that none of the fields was left blank
+while 1:
+        if fieldValues == None: break
+        errmsg = ""
+        for i in range(len(fieldNames)):
+            if fieldValues[i].strip() == "":
+                errmsg = errmsg + ('"%s" is a required field.' % fieldNames[i])
+        if errmsg == "": break # no problems found
+        fieldValues = multenterbox(errmsg, title, fieldNames, fieldValues)
  
 number = 0
 #print noofemptyfields
@@ -58,7 +78,7 @@ with open(inmagic_xmlfile, "w+") as fo:
 	fo.write('<inm:Depositor-Ref-Number/>\n')
 	fo.write('<inm:Movement-Field/>\n')
 	fo.write('</inm:Record>\n')
-for _ in range(no_of_emptyfields):
+for _ in range(no_of_emptyfields - 1):
 	number += 1
 	with open(inmagic_xmlfile, "a+") as fo:
 
@@ -135,3 +155,12 @@ for filename in video_files: #Begin a loop for all .mov and .mp4 files.
 	numbo +=1
 	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:File-Format', codec,inmagic_xmlfile)
 	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Digital-Size', filesize,inmagic_xmlfile)
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Year', fieldValues[0],inmagic_xmlfile)
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Film-Title', fieldValues[1],inmagic_xmlfile)
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Copyright', fieldValues[2],inmagic_xmlfile)
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Date-Of-Donation', fieldValues[3],inmagic_xmlfile)
+	add_to_inmagic('//inm:Record' + str([numbo]) + '//inm:Director', fieldValues[4],inmagic_xmlfile)
+
+subprocess.call(['xmlstarlet', 'ed', '--inplace','-d',
+                '//*[not(./*) and (not(./text()) or normalize-space(./text())="")]',
+                 inmagic_xmlfile])
