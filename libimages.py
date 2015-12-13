@@ -3,11 +3,17 @@ import subprocess
 from glob import glob
 import os
 from easygui import multenterbox, choicebox
+from Tkinter import *
+import tkFileDialog
+root = Tk()
 
-video_dir = sys.argv[1]
+# Create file-open dialog.
+root.update()
+# Directory with files that we want to transcode losslessly and generate metadata for P.S just as for directory instead, fix later.
+video_dir = tkFileDialog.askdirectory(parent=root)
 inmagic_xmlfile = 'blablabla.xml'
-wd = os.path.dirname(video_dir)
-os.chdir(wd)
+
+os.chdir(video_dir)
 
 # Find all video files to transcode
 video_files =  glob('*.tif') + glob('*.jpg')
