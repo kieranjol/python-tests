@@ -1,0 +1,12 @@
+<!ELEMENT eu (memberstate*)>
+<!ELEMENT memberstate (name,area,population,capital*,headOfstate*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT capital (name,population)>
+<!ELEMENT headOfstate (firstName,lastName,title*)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT population (#PCDATA)>
+<!ATTLIST headOfstate type CDATA #REQUIRED>
+<!ATTLIST population AdministrativeDivision CDATA #IMPLIED>
