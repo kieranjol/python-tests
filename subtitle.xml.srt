@@ -1,0 +1,10 @@
+1
+00:00:00.001 --> 00:00:05.146
+XML subtitles.
+Appear at the same time as burnt-in subtitles
+
+2
+00:00:06.104 --> 00:00:09.042
+This subtitle is italic
+Special chars :
+
