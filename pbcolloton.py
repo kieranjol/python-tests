@@ -10,7 +10,7 @@ for root, dirs, files in os.walk(video_dir):
             full_path = os.path.join(root,filename)
             cmd = ['mediainfo', '--Output=PBCore2', full_path]
             metadata = subprocess.check_output(cmd)
-            sidecar = filename + '.xml'
+            sidecar = os.path.join(root,filename) + '.xml'
             print 'Creating PBCore sidecar for %s' % filename 
-            with open(sidecar, 'wb') as fo:
+            with open(sidecar, 'w+') as fo:
                 fo.write(metadata)
