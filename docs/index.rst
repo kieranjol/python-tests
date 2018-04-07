@@ -60,4 +60,4 @@ Table of Contents
    
    installation
    contributing
-   README
+   usage
