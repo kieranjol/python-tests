@@ -1,6 +1,9 @@
+.. ifiscripts documentation master file, created by
+   sphinx-quickstart on Sat Apr  7 14:48:44 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-
-hi thar
+Welcome to ifiscripts's documentation!
 ======================================
 
 .. toctree::
@@ -8,14 +11,3 @@ hi thar
    :caption: Contents:
    
    README
-   
-   
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
