@@ -2,8 +2,6 @@ Introduction
 ============
 
 .. image:: http://readthedocs.org/projects/python-tests/badge/?version=latest
-:target: http://python-tests.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
 
 Summary
 -------
