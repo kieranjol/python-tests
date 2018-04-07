@@ -49,6 +49,9 @@ An example workflow might be:
 
 So this is just one way of using the scripts from acquisition to preservation storage, but there are many other scripts for specific workflows, which you can investigate further down in the documentation.
 
+Table of Contents
+-----------------
+
 
 .. toctree::
    :maxdepth: 3
