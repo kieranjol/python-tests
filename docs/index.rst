@@ -1,7 +1,7 @@
+.. image:: http://readthedocs.org/projects/python-tests/badge/?version=latest
+
 Introduction
 ============
-
-.. image:: http://readthedocs.org/projects/python-tests/badge/?version=latest
 
 Summary
 -------
