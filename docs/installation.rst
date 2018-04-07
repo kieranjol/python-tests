@@ -11,7 +11,7 @@ However some folks just cd into the clone repository and run the scripts from th
 External dependencies are listed below, but `lxml` is the main python library that must be installed for most scripts.
 `pip install lxml` should work fine.
 
-pip/setup.py
+Using pip/setup.py
 ------------
 
 the following is currently experimental, but it should work fine:
