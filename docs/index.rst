@@ -1,9 +1,7 @@
-.. ifiscripts documentation master file, created by
-   sphinx-quickstart on Sat Apr  7 14:48:44 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Introduction
+============
    
-summary
+Summary
 -------
 
 Scripts for use in the IFI Irish Film Archive. Scripts have been tested
