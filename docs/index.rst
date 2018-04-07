@@ -2,6 +2,7 @@
    sphinx-quickstart on Sat Apr  7 14:48:44 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+   
 summary
 -------
 
@@ -49,8 +50,7 @@ An example workflow might be:
 * The accessioned package can then be written to preservation storage, again using the ``copyit.py`` command.
 
 So this is just one way of using the scripts from acquisition to preservation storage, but there are many other scripts for specific workflows, which you can investigate further down in the documentation.
-Welcome to ifiscripts's documentation!
-======================================
+
 
 .. toctree::
    :maxdepth: 3
