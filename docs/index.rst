@@ -56,4 +56,7 @@ So this is just one way of using the scripts from acquisition to preservation st
    :maxdepth: 3
    :caption: Contents:
    
+   
+   installation
+   contributing
    README

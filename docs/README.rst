@@ -5,9 +5,6 @@ table of contents
 -----------------
 
 
-3.  `Installation <https://github.com/kieranjol/IFIscripts#installation>`__
-4.  `Contributing <https://github.com/kieranjol/IFIscripts#contributing>`__
-
 5.  `Arrangement <https://github.com/kieranjol/IFIscripts#arrangement>`__
 
     -  `sipcreator.py <https://github.com/kieranjol/IFIscripts#sipcreatorpy>`__
@@ -89,47 +86,8 @@ table of contents
 
 
 
-Installation
-------------
-In general, you can just clone or download this whole repository and run the scripts like that. In the Irish Film Institute, on linux, OSX and Windows, we create a folder in the home directory called ``ifigit``, then we run ``git clone https://github.com/kieranjol/ifiscripts``. Then we add the ``ifiscripts`` folder to ``$PATH`` which allows us to access the scripts from any directory, not just ``ifigit/ifiscripts``.
-
-However some folks just cd into the clone repository and run the scripts from there, for example to run ``makeffv1.py`` you might run:
-``python makeffv1.py path/to.filename.mov``.
-
-External dependencies are listed below, but `lxml` is the main python library that must be installed for most scripts.
-`pip install lxml` should work fine.
-
-the following is currently experimental, but it should work fine:
-
-You can get a selection of scripts by making sure that ``pip`` installed, then running:
-``pip install ifiscripts``
-or ``cd`` into the ``ifiscripts`` cloned folder and run
-``python setup.py install``
-
-The pip installation methods have the added benefit of installing the python dependencies such as `lxml`.
-
-There are some external `subprocess` dependencies for most of the scripts.
-
-* ffmpeg
-* mediainfo
-
-are the most frequently used ones.
-
-* mkvpropedit
-* siegfried
-* exiftool
-
-are also needed for many scripts.
 
 
-Contributing
-------------
-
-Contributions are very much welcome in any form. Feel free to raise an issue requesting a new feature, or to report a bug. If reporting a bug, please copy/paste the full, complete, uncut terminal output.
-
-Pull requests are welcome. If contributing code, it can be nice to run it through `pylint` first, as this will check for PEP-08 compliance. I'd rather get the code contribution in pretty much any form, so this is not necessary.
-
-Generally, we try to limit the use of dependencies, so we try to do as much in `python` as possible. This can be seen in any scripts that generate checksums. We slowly moved away from using the wonder `md5deep` and used the python internal `hashlib` libraries instead. 
 
 Arrangement
 -----------
