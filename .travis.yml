@@ -1,4 +1,4 @@
 language: python
 
 
-script: python hello.py
+script: python validate.py
