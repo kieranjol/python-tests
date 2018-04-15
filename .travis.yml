@@ -1,4 +1,4 @@
 language: python
 
 
-script: python validate.py
+script: python untest.py
